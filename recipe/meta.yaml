@@ -1,17 +1,18 @@
 {% set name = "bertopic" %}
 {% set version = "0.15.0" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bertopic-{{ version }}.tar.gz
-  sha256: b7fe931a727e00c00ff42ef974fd63b83621c30a9259ed32fceaa7c934845eaf
+  sha256: 96dae6e64b1d9e4ecb65ee97623e7451d00275d53515a3e5fe36adff6f5517e1
+
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  skip: True   #[ py<38 or s390x]
 
 requirements:
   host:
