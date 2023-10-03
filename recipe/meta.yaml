@@ -1,5 +1,5 @@
 {% set name = "bertopic" %}
-{% set version = "0.13.0" %}
+{% set version = "0.15.0" %}
 
 
 package:
@@ -8,31 +8,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bertopic-{{ version }}.tar.gz
-  sha256: 676eb22d729c133be8798458380663003dbcc307efa71e1259df5ebce84d9e6b
-
+  sha256: b7fe931a727e00c00ff42ef974fd63b83621c30a9259ed32fceaa7c934845eaf
 build:
   number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python
   run:
-    - python >=3.7
-    # This is a temporary workaround; review in the future
-    - pyyaml <6.0
-    - umap-learn >=0.5.0
-    - hdbscan >=0.8.27
+    - python
     - numpy >=1.20.0
+    - hdbscan >=0.8.29
+    - umap-learn >=0.5.0
     - pandas >=1.1.5
-    - plotly >=4.7.0
     - scikit-learn >=0.22.2.post1
-    - sentence-transformers >=0.4.1
     - tqdm >=4.41.1
-    - cython
-    - pyarrow >=6.0.0
+    - sentence-transformers >=0.4.1
+    - plotly >=4.7.0
 
 test:
   imports:
@@ -47,6 +41,11 @@ about:
   summary: BERTopic performs topic Modeling with state-of-the-art transformer models.
   license: MIT
   license_file: LICENSE
+  description: |
+    BERTopic is a topic modeling technique that leverages transformers and c-TF-IDF to
+    create dense clusters allowing for easily interpretable topics whilst keeping important
+    words in the topic descriptions.
+  doc_url: https://maartengr.github.io/BERTopic/
 
 extra:
   recipe-maintainers:
