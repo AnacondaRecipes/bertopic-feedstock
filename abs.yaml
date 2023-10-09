@@ -2,3 +2,4 @@ upload_channels:
   - sfe1ed40
 channels:
   - sfe1ed40
+  - https://staging.continuum.io/prefect/fs/umap-learn-feedstock/pr3/52ba27e
