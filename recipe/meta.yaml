@@ -20,10 +20,9 @@ requirements:
     - python
     - setuptools
     - wheel
-    - numpy >={{ numpy_min_ver }},!=1.22.0,!=1.22.1,!=1.22.2,<1.25
   run:
     - python
-    - numpy
+    - numpy >={{ numpy_min_ver }},!=1.22.0,!=1.22.1,!=1.22.2,<1.25
     - hdbscan >=0.8.29
     - umap-learn 0.5.4
     - pandas >=1.1.5
