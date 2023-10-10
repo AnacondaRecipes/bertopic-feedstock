@@ -25,6 +25,7 @@ requirements:
     - wheel
   run:
     - python
+    # To avoid umap-learn/numpy/numba incompatibility we need numpy<1.24
     - numpy >=1.20.0,!=1.22.0,!=1.22.1,!=1.22.2,<1.24
     - hdbscan >=0.8.29
     - umap-learn >=0.5.0
